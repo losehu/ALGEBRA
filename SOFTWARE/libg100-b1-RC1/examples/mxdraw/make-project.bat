@@ -1,0 +1,1 @@
+make > Resultat-Compilation.txt

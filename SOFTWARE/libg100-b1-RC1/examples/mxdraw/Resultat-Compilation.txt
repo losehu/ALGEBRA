@@ -1,0 +1,13 @@
+compile.cmd dm mx mx.c
+Fichier de sortie: mx.obj
+Compilateur: Digital Mars
+Fichier[s] a traiter : mx.c
+
+build.cmd dm mx dmcg100.lib mx.obj
+Fichier de sortie: mx.exe
+Compilateur: Digital Mars
+Fichier[s] a traiter : dmcg100.lib
+Fichier[s] a traiter : mx.obj
+link mx,mx.exe,,dmcg100/noi;
+
+

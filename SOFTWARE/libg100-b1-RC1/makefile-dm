@@ -1,0 +1,89 @@
+################################################################
+#  Makefile for libcg100 build - with Digital Mars		       #
+#   libg100.sf.net		- distributed in LGPL				   #
+################################################################
+
+########################### Configuration ###############
+
+# Configuration de l'environnment
+PATH		 = d:\dm
+P_CODE 		 = source
+P_INCLUDE	 = include
+LIB_NAME 	 = dmcg100
+
+# Configuration du compilateur
+COMPILO_PATH  = $(PATH)\bin\dmc.exe
+COMPILO_PARAM = -2 -ms -Nc -I$(P_INCLUDE) -c
+
+# Configuration du Librarian
+LIBR_PATH	  = $(PATH)\bin\lib.exe
+LIBR_PARAM	  = -c $(LIB_NAME)
+
+##Liste des fichiers objets a compiler
+DRAWLIB_OBJ  = drawlib.obj
+SCREEN_OBJ 	 = screen.obj
+COMM_OBJ   	 = comm.obj
+KEYBOARD_OBJ = keyboard.obj
+CALC_OBJ 	 = calc.obj
+DBPAINT_OBJ  = dbpaint.obj
+GXLIB10_OBJ  = gxlib10.obj
+MEMZONES_OBJ = memzones.obj
+C3PAINT_OBJ  = c3paint.obj
+
+TOTAL_OBJ	 = $(SCREEN_OBJ) $(DRAWLIB_OBJ) $(COMM_OBJ)\
+			   $(KEYBOARD_OBJ) $(CALC_OBJ) $(DBPAINT_OBJ)\
+			   $(GXLIB10_OBJ) $(MEMZONES_OBJ) $(C3PAINT_OBJ)
+
+##Liste des fichiers sur qui depends la compilation
+DRAWLIB_DEP	 = $(P_CODE)\drawlib.c   $(P_INCLUDE)\drawlib.h
+SCREEN_DEP 	 = $(P_CODE)\screen.c 	 $(P_INCLUDE)\screen.h
+COMM_DEP 	 = $(P_CODE)\comm.c 	 $(P_INCLUDE)\comm.h
+KEYBOARD_DEP = $(P_CODE)\keyboard.c  $(P_INCLUDE)\keyboard.h
+CALC_DEP 	 = $(P_CODE)\calc.c 	 $(P_INCLUDE)\calc.h
+DBPAINT_DEP  = $(P_CODE)\dbpaint.c 	 $(P_INCLUDE)\dbpaint.h
+GXLIB10_DEP  = $(P_CODE)\gxlib10.c 	 $(P_INCLUDE)\gxlib10.h
+MEMZONES_DEP = $(P_CODE)\memzones.c  $(P_INCLUDE)\memzones.h
+C3PAINT_DEP  = $(P_CODE)\c3paint.c   $(P_INCLUDE)\c3paint.h
+
+
+# Commande de Compilation
+COMPILE = $(COMPILO_PATH) $(COMPILO_PARAM) $(P_CODE)/$*.c
+
+#################### Makefile ########################""
+
+all: clean $(TOTAL_OBJ) add2lib
+
+add2lib:
+	$(LIBR_PATH) $(LIBR_PARAM) $(TOTAL_OBJ)
+
+clean:
+	del *.obj
+
+$(SCREEN_OBJ)  : $(SCREEN_DEP)
+	 $(COMPILE)
+
+$(MEMZONES_OBJ)  : $(MEMZONES_DEP)
+	 $(COMPILE)
+	 
+$(DRAWLIB_OBJ)  : $(DRAWLIB_DEP)
+	 $(COMPILE)
+	 
+$(COMM_OBJ)	   : $(COMM_DEP)
+	 $(COMPILE)
+
+$(KEYBOARD_OBJ): $(KEYBOARD_DEP)
+	 $(COMPILE)
+	 
+$(CALC_OBJ)	   : $(CALC_DEP)
+	 $(COMPILE)
+	 
+$(DBPAINT_OBJ) : $(DBPAINT_DEP)
+	 $(COMPILE)
+	 
+$(GXLIB10_OBJ) : $(GXLIB10_DEP)
+	 $(COMPILE)
+	 
+$(C3PAINT_OBJ) : $(C3PAINT_DEP)
+	 $(COMPILE)
+
+

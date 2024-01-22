@@ -1,0 +1,122 @@
+make -f makefile-tc
+del *.obj
+c:\tc\bin\tcc.exe -1 -mt -Iinclude -c source/screen.c
+Turbo C++ Version 3.00 Copyright (c) 1992 Borland International
+source/screen.c:
+
+        Available memory 4111532
+
+c:\tc\bin\tlib.exe tccg100 -+screen
+TLIB 3.02 Copyright (c) 1991 Borland International
+Warning: 'SCREEN' not found in library
+
+c:\tc\bin\tcc.exe -1 -mt -Iinclude -c source/drawlib.c
+Turbo C++ Version 3.00 Copyright (c) 1992 Borland International
+source/drawlib.c:
+
+        Available memory 4088696
+
+c:\tc\bin\tlib.exe tccg100 -+drawlib
+TLIB 3.02 Copyright (c) 1991 Borland International
+Warning: 'DRAWLIB' not found in library
+
+c:\tc\bin\tcc.exe -1 -mt -Iinclude -c source/comm.c
+Turbo C++ Version 3.00 Copyright (c) 1992 Borland International
+source/comm.c:
+
+        Available memory 4113148
+
+c:\tc\bin\tcc.exe -1 -mt -Iinclude -c source/keyboard.c
+Turbo C++ Version 3.00 Copyright (c) 1992 Borland International
+source/keyboard.c:
+
+        Available memory 4116380
+
+c:\tc\bin\tlib.exe tccg100 -+keyboard
+TLIB 3.02 Copyright (c) 1991 Borland International
+Warning: 'KEYBOARD' not found in library
+
+c:\tc\bin\tcc.exe -1 -mt -Iinclude -c source/calc.c
+Turbo C++ Version 3.00 Copyright (c) 1992 Borland International
+source/calc.c:
+
+        Available memory 4117660
+
+c:\tc\bin\tlib.exe tccg100 -+calc
+TLIB 3.02 Copyright (c) 1991 Borland International
+Warning: 'CALC' not found in library
+
+c:\tc\bin\tcc.exe -1 -mt -Iinclude -c source/dbpaint.c
+Turbo C++ Version 3.00 Copyright (c) 1992 Borland International
+source/dbpaint.c:
+
+        Available memory 4087396
+
+c:\tc\bin\tlib.exe tccg100 -+dbpaint
+TLIB 3.02 Copyright (c) 1991 Borland International
+Warning: 'DBPAINT' not found in library
+
+c:\tc\bin\tcc.exe -1 -mt -Iinclude -c source/gxlib10.c
+Turbo C++ Version 3.00 Copyright (c) 1992 Borland International
+source/gxlib10.c:
+
+        Available memory 4048240
+
+c:\tc\bin\tlib.exe tccg100 -+gxlib10
+TLIB 3.02 Copyright (c) 1991 Borland International
+Warning: 'GXLIB10' not found in library
+
+c:\tc\bin\tcc.exe -1 -mt -Iinclude -c source/memzones.c
+Turbo C++ Version 3.00 Copyright (c) 1992 Borland International
+source/memzones.c:
+
+        Available memory 4045104
+
+c:\tc\bin\tlib.exe tccg100 -+memzones
+TLIB 3.02 Copyright (c) 1991 Borland International
+Warning: 'MEMZONES' not found in library
+
+c:\tc\bin\tcc.exe -1 -mt -Iinclude -c source/c3paint.c
+Turbo C++ Version 3.00 Copyright (c) 1992 Borland International
+source/c3paint.c:
+
+        Available memory 4112864
+
+c:\tc\bin\tlib.exe tccg100 -+c3paint
+TLIB 3.02 Copyright (c) 1991 Borland International
+Warning: 'C3PAINT' not found in library
+
+
+make -f makefile-dm
+del *.obj
+d:\dm\bin\dmc.exe -2 -ms -Nc -Iinclude -c source/screen.c
+
+d:\dm\bin\dmc.exe -2 -ms -Nc -Iinclude -c source/drawlib.c
+
+d:\dm\bin\dmc.exe -2 -ms -Nc -Iinclude -c source/comm.c
+
+d:\dm\bin\dmc.exe -2 -ms -Nc -Iinclude -c source/keyboard.c
+    while (testgroup(0x7F,0x7FF)); // On teste toute les touches.
+                                ^
+source/keyboard.c(70) : Warning 7: possible extraneous ';'
+
+d:\dm\bin\dmc.exe -2 -ms -Nc -Iinclude -c source/calc.c
+  for(i=0;i<j*10;i++);
+                    ^
+source/calc.c(34) : Warning 7: possible extraneous ';'
+
+d:\dm\bin\dmc.exe -2 -ms -Nc -Iinclude -c source/dbpaint.c
+
+d:\dm\bin\dmc.exe -2 -ms -Nc -Iinclude -c source/gxlib10.c
+
+d:\dm\bin\dmc.exe -2 -ms -Nc -Iinclude -c source/memzones.c
+
+d:\dm\bin\dmc.exe -2 -ms -Nc -Iinclude -c source/c3paint.c
+
+d:\dm\bin\lib.exe -c dmcg100 screen.obj drawlib.obj comm.obj keyboard.obj calc.obj dbpaint.obj gxlib10.obj memzones.obj c3paint.obj
+Digital Mars Librarian Version 8.00n
+Copyright (C) Digital Mars 2000-2002 All Rights Reserved www.digitalmars.com
+Digital Mars Librarian complete.  
+
+
+del *.obj *.bak

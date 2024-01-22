@@ -1,0 +1,27 @@
+#####################################################
+##               LibG100                           ##
+##                    Examples                     ##
+#####################################################
+
+
+Voici des examples de programmes compilés avec la librairie
+
+Vous trouverez dans le dossier Utils des utilitaires pour vous
+aider a mieux compiler, plus facilement donc les fichiers .cmd
+qui automatisent la compilation et un makefile exemple.
+
+Pour chancun des examples, copier les fichiers .h du répertoire
+/include de l'archive de la librairie dans le repertoire libg100
+du répertoire de l'example et copiez le bon fichier
+.lib (dm et/ou tc) dans le répertoire de l'example !
+
+Pour compiler, vérifier si les chemins d'acces vers Digital Mars
+ou Turbo C++ sont bon dans les fichiers .cmd, ainsi que vous avez
+choisi le bon compilateur dans le makefile, pour utiliser make, soit
+copiez make.exe de la racine de l'archive vers le dossier ou mettez
+le répertoire bin de digital mars dans la PATH de windows/dos !
+
+Lancez make-project.bat !
+
+Le listing des eventuelles erreurs sera contenu dans :
+Resultat-Compilation.txt
